@@ -51,19 +51,24 @@ unsigned int ADC_Read(){
     return ((int)ADRESH << 8) | ADRESL;
 }
 void main(){
-    unsigned short ADCResult;
-    //Salida Digital
-    TRISD=0x00;
-    PORTD=0;
-    //Entrada Analogica
-    ANSEL=0x01;
-    TRISA=0x01;
-    while(1){
-        
-        ADCResult=ADC_Read();
-        PORTD=ADCResult >> 4;
-        
-    }
+    uunsigned short ADCResult;
+    TRISC = 0x00;
+
+    PORTC = 0x0-;
+    PR2 = 0x3F;
+
+    T2CON = 0x04;
+
+    CCP2CON = 0x0F;
+    while (1) {
+        ADCResult = ADC_Read();
+        CCPR2L = (ADCResult>>2);
+
+        CCP2CONbits.DCB1 = ADCResult & 0x01;
+        CCP2CONbits.DCB2 = ADCResult & 0x02;
+
+
   
+    }
 }
 
