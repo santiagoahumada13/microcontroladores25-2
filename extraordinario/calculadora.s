@@ -22,7 +22,7 @@ Multiplicacion
 	
 	mov		r2,r1	 ;R2 representa el segundo operando de la multiplicacion
 					 ;y cuantas veces se va asumar a si mismo el primer operando 
-					 ;(algoritmo de una multiplicación)
+					 ;(algoritmo de una multiplicaciÃ³n)
 	mov		r1,r0	 ;Mueve el primer operando a R1 para hacer la suma a si mismo
 	sub		r2,r2,#1 ;Ajusta el contador del ciclo de sumas
 loop_mult
@@ -82,7 +82,7 @@ x_kp1
 	ble		done_sqrt
 	
 	udiv	r2,r0,r1 	;Divide n entre x_k
-	add		r3,r2,r1	;Suma x_k al resultado de la operación
+	add		r3,r2,r1	;Suma x_k al resultado de la operaciÃ³n
 	lsr		r4,r3,#1 	; Usa un desplazamiento logico a la derecha para dividir entre 2 el resultado
 	
 	sub		r5,r4,r1	;x_k+1 - x_k
@@ -96,7 +96,7 @@ done_sqrt
 	bx		lr
 
 ;Logaritmo base 4 -----------------------------------------------------------------------------------------------------------------------------------------
-logb4    ; === 1. Prologue: salvar registros usados ===
+logb4   
 
 	;En r0 se encuentra el operando al que se busca calcular el logaritmo base 4
 	;Por lo que hay que comparar este numero con el resultado de la exponenciacion
